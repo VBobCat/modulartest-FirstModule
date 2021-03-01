@@ -13,8 +13,9 @@ services:
 
     # makes classes in src/ available to be used as services
     # this creates a service per class whose id is the fully-qualified class name
-    App\:
-        resource: '../src/'
+    ModularTest\FirstModuleBundle\:
+        # resource: '../src/'
+        resource: '../../../src/'  # as advised by https://stackoverflow.com/a/66423865/3718031
         exclude:
             - '../src/DependencyInjection/'
             - '../src/Entity/'
@@ -23,8 +24,9 @@ services:
 
     # controllers are imported separately to make sure services can be injected
     # as action arguments even if you don't extend any base controller class
-    App\Controller\:
-        resource: '../src/Controller/'
+    ModularTest\FirstModuleBundle\Controller\:
+        # resource: '../src/Controller/'
+        resource: '../../../src/Controller/'  # as advised by https://stackoverflow.com/a/66423865/3718031
         tags: ['controller.service_arguments']
 
     # add more service definitions when explicit configuration is needed
