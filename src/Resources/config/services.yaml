@@ -18,6 +18,7 @@ services:
         resource: '../../../src/'  # as advised by https://stackoverflow.com/a/66423865/3718031
         exclude:
             - '../src/DependencyInjection/'
+            - '../src/Resources/'
             - '../src/Entity/'
             - '../src/Kernel.php'
             - '../src/Tests/'
